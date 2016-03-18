@@ -326,7 +326,7 @@ func getStructInfo(st reflect.Type) (*structInfo, error) {
 		// Get the StructField
 		field := st.Field(i)
 
-		if field.PkgPath != "" {
+		if field.PkgPath != "" && !field.Anonymous {
 			continue // Skip private fields
 		}
 
